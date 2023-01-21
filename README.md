@@ -1,6 +1,6 @@
 # 絶対に！押すなボタン
 
-<img src="https://github.com/3110/never-push-me/raw/main/images/never-push-me.jpg" width="800">
+<img src="https://github.com/3110/never-push-me/raw/main/images/never-push-me.jpg" width="800px">
 
 絶対に押しちゃダメなボタンです。押すなよ，絶対に押すなよ。
 
