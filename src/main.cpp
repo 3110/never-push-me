@@ -12,8 +12,8 @@ const struct
     int32_t y;
     const lgfx::IFont* font;
 } LABELS[] = {
-    {"絶対に！", TFT_WHITE, 64, 30, &fonts::lgfxJapanGothic_16},
-    {"押すな", TFT_WHITE, 64, 50, &fonts::lgfxJapanGothic_28},
+    {"絶対に！", TFT_WHITE, 64, 35, &fonts::lgfxJapanGothic_16},
+    {"押すな", TFT_WHITE, 64, 55, &fonts::lgfxJapanGothic_28},
 };
 const size_t N_LABELS = sizeof(LABELS) / sizeof(LABELS[0]);
 
