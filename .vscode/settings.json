@@ -26,8 +26,13 @@
     },
     "cSpell.words": [
         "lgfx",
+        "LOGD",
+        "LOGI",
+        "millis",
         "platformio",
+        "SSID",
         "Struct",
+        "uploadfs",
         "USBHID"
     ],
     "markdownlint.config": {

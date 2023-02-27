@@ -17,3 +17,21 @@
 ATOMS3 を PC に接続すると，USB キーボードとして認識されます。上記の写真では，[スイッチサイエンス](https://www.switch-science.com/)で販売している[USB Type-A/Type-C プラグアダプタ](https://ssci.to/7998)を使用しています。
 
 絶対に押しちゃダメですが，押すと`CTRL+ALT+DELETE`が押されたのと同じ動作になります。
+
+### LINE への通知機能
+
+v0.0.2 より`env:never-push-me-with-line-notify`を選択してコンパイルすると，WiFi に接続して LINE Notify にボタンが押されたことを通知できるようになりました。
+
+`data` ディレクトリ（`platformio.ini`の`[platformio]`セクションにある`data_dir`で指定したディレクトリ）に以下 JSON ファイル（`line_notify.json`）を置いて LINE Notify に接続するために必要な情報を記載します。
+
+```line_notify.json
+{
+    "ssid": "[SSID]",
+    "password": "[パスワード]",
+    "token": "[LINE Notify のパーソナル・アクセス・トークン]"
+}
+```
+
+※ここで指定するパーソナル・アクセス・トークンは LINE Notify のマイページから発行できます。
+
+ファームウェアを書き込んだ後，PlatformIO メニューから「Upload Filesystem Image」を選択するか，コマンドラインから`pio run --target uploadfs`を実行して設定ファイルを SPIFFS にアップロードし，設定を反映します。
