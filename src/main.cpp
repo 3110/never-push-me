@@ -7,7 +7,6 @@
 #include "parser/LINENotifyConfigParser.hpp"
 
 const char* CONFIG_FILE = "/line_notify.json";
-const char* NOTIFY_MESSAGE = "押しちゃダメなのに押された";
 #endif
 
 const uint32_t BACKGROUND_COLOR = M5.Lcd.color888(255, 25, 25);
@@ -31,11 +30,13 @@ const uint8_t KEYS[] = {
     KEY_DELETE,
 };
 const size_t N_KEYS = sizeof(KEYS) / sizeof(KEYS[0]);
+const char* TAG = "NeverPushMe";
 
 USBHIDKeyboard keyboard;
 
 #if defined(LINE_NOTIFY)
 LINENotify notify;
+LINENotifyConfigParser parser;
 #endif
 
 void setup(void) {
@@ -51,15 +52,15 @@ void setup(void) {
     M5.Lcd.endWrite();
 
 #if defined(LINE_NOTIFY)
-    LINENotifyConfigParser parser;
-    if (!parser.parse(CONFIG_FILE)) {
-        ESP_LOGE("main", "Failed to parse config file");
+    if (!parser.parse(CONFIG_FILE) || !parser.hasMessage()) {
+        ESP_LOGE(TAG, "Failed to parse config file");
         while (true) {
             delay(100);
         }
     }
-    ESP_LOGD("main", "SSID: %s", parser.getSSID());
-    ESP_LOGD("main", "Password: %s", parser.getPassword());
+    ESP_LOGD(TAG, "SSID: %s", parser.getSSID());
+    ESP_LOGD(TAG, "Password: %s", parser.getPassword());
+    ESP_LOGD(TAG, "Message: %s", parser.getMessage());
     notify.begin(parser.getSSID(), parser.getPassword());
     notify.setToken(parser.getToken());
 #endif
@@ -81,8 +82,8 @@ void loop(void) {
             keyboard.press(KEYS[i]);
         }
 #if defined(LINE_NOTIFY)
-        if (!notify.send(NOTIFY_MESSAGE)) {
-            ESP_LOGE("main", "Failed to send notify: %s", NOTIFY_MESSAGE);
+        if (!notify.send(parser.getMessage())) {
+            ESP_LOGE(TAG, "Failed to send notify");
         }
 #endif
     } else {
