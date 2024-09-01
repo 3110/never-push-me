@@ -25,7 +25,7 @@ Arduino 版，UIFlow2 版とも Windows 11 と macOS Sonoma で動作確認を�
 
 ## Arduino 版
 
-[M5Unified](https://github.com/m5stack/M5Unified)を使って実装しています。[VSCode](https://azure.microsoft.com/ja-jp/products/visual-studio-code) の [PlatformIO IDE](https://platformio.org/platformio-ide) 環境でコンパイルして実機にアップロードしてください。
+[M5Unified](https://github.com/m5stack/M5Unified)と自作した[M5Stack 用 LINE Notify ライブラリ](https://github.com/3110/m5stack-line-notify)を使って実装しています。[VSCode](https://azure.microsoft.com/ja-jp/products/visual-studio-code) の [PlatformIO IDE](https://platformio.org/platformio-ide) 環境でコンパイルして実機にアップロードしてください。
 
 デフォルトの`env:never-push-me`を選択してコンパイルすると，ボタンを押したときに決められたキーコードを送信します。
 
@@ -41,6 +41,8 @@ Arduino 版，UIFlow2 版とも Windows 11 と macOS Sonoma で動作確認を�
     "message": "[ボタンが押されたときに通知するメッセージ]"
 }
 ```
+
+`message`は最大
 
 `line_notify.json`を実機の SPIFFS に転送して設定を反映するためには，PlatformIO メニューから「Upload Filesystem Image」を選択するか，コマンドラインから`pio run --target uploadfs`を実行します。
 
