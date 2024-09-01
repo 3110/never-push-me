@@ -42,7 +42,7 @@ Arduino 版，UIFlow2 版とも Windows 11 と macOS Sonoma で動作確認を�
 }
 ```
 
-`message`は最大
+`message`には UTF-8 で約 48 文字までのメッセージを指定できます。
 
 `line_notify.json`を実機の SPIFFS に転送して設定を反映するためには，PlatformIO メニューから「Upload Filesystem Image」を選択するか，コマンドラインから`pio run --target uploadfs`を実行します。
 
