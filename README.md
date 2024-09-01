@@ -37,7 +37,8 @@ Arduino 版，UIFlow2 版とも Windows 11 と macOS Sonoma で動作確認を�
 {
     "ssid": "[SSID]",
     "password": "[パスワード]",
-    "token": "[LINE Notify のパーソナル・アクセス・トークン]"
+    "token": "[LINE Notify のパーソナル・アクセス・トークン]",
+    "message": "[ボタンが押されたときに通知するメッセージ]"
 }
 ```
 
