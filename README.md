@@ -10,7 +10,7 @@
 
 絶対に！押すなボタンは絶対に押しちゃダメなボタンで，[M5Stack 社](https://m5stack.com/) の [ATOMS3](https://shop.m5stack.com/products/atoms3-dev-kit-w-0-85-inch-screen)を使用して実装しています。
 
-Arduino 版は ATOMS3 が USB キーボードとして認識され，絶対に押しちゃダメですが，ボタンが押されると指定されたキーコード（デフォルトでは CTRL+ALT+DELETE）を送信します。WiFi に接続してキーコードの送信と同時に LINE Notify で押されたことを通知することもできます。
+Arduino 版は ATOMS3 が USB キーボードとして認識され，絶対に押しちゃダメですが，ボタンが押されると指定されたキーコード（デフォルトでは `CTRL+ALT+DELETE`）を送信します。WiFi に接続してキーコードの送信と同時に LINE Notify で押されたことを通知することもできます。
 
 UIFlow2 版は ATOMS3 を WiFi に接続し，絶対に押しちゃダメですが，ボタンが押されると LINE Notify で押されたことを通知します。
 
@@ -51,11 +51,12 @@ LINE Notify の通知を有効にしている場合は，ボタンを押すと�
 
 ## UIFlow2 版
 
-Arduino 版とは異なり，キーコードを送信する機能はなく，ボタンが押されたときに LINE Notify で指定したメッセージを通知します。[UIFlow2](https://uiflow2.m5stack.com/) の v2.1.3 以降で動作します。
+※[UIFlow2](https://uiflow2.m5stack.com/) の v2.1.3 以降で動作します。
 
-UIFlow2 の「Import project from local file」メニューからプロジェクトファイル`uiflow2/never-push-me.m5f2`を読み込みます。
+Arduino 版とは異なり，キーコードを送信する機能はなく，ボタンが押されたときに LINE Notify で指定したメッセージを通知します。
+UIFlow2 の「Import project from local file」メニューからプロジェクトファイル`uiflow2/never-push-me.m5f2`を読み込んでください。
 
-同じものを Project Zone でも公開しています。検索窓に「never-push-me」と入力して検索し，Import ボタンを押してください。
+また，同じものを Project Zone でも公開しています。検索窓に「never-push-me」と入力して検索し，Import ボタンを押すことで読み込むことができます。
 
 <img src="images/never-push-me-on-project-zone.jpg" width="800px">
 
