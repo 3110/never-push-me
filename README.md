@@ -58,7 +58,7 @@ LINE Notify の通知を有効にしている場合は，ボタンを押すと�
 Arduino 版とは異なり，キーコードを送信する機能はなく，ボタンが押されたときに LINE Notify で指定したメッセージを通知します。
 UIFlow2 の「Import project from local file」メニューからプロジェクトファイル`uiflow2/never-push-me.m5f2`を読み込んでください。
 
-また，同じものを Project Zone でも公開しています。検索窓に「never-push-me」と入力して検索し，Import ボタンを押すことで読み込むことができます。
+また，同じものを Project Zone でも公開しています。[https://uiflow2.m5stack.com/?pkey=39a6e782a09e466881fbf5957dfdd146](https://uiflow2.m5stack.com/?pkey=39a6e782a09e466881fbf5957dfdd146)からプロジェクトを読み込むか，Project Zone の検索窓に「never-push-me」と入力して検索し，Import ボタンを押すことで読み込むことができます。
 
 <img src="images/never-push-me-on-project-zone.jpg" width="800px">
 
